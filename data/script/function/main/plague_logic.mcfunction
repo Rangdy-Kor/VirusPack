@@ -1,0 +1,13 @@
+execute as @e[tag=virus] at @s store result score @s virus_damage_random run random value 1..1000
+execute as @e[tag=virus] at @s if score @s virus_damage_random matches 1 run damage @s 1 wither by plague
+execute as @e[tag=virus] at @s if score @s virus_damage_random matches 2..3 run damage @s 2 wither by plague
+execute as @e[tag=virus] at @s if score @s virus_damage_random matches 4..5 run damage @s 3 wither by plague
+execute as @e[tag=virus] at @s if score @s virus_damage_random matches 6 run damage @s 4 wither by plague
+
+execute as @e[tag=virus] at @s store result score @s virus_contagion_random run random value 1..1000
+execute as @e[tag=virus] at @s if entity @e[distance=..1] if score @s virus_contagion_random matches 11..110 run tag @e[distance=..1,limit=2] add virus
+execute as @e[tag=virus] at @s if entity @e[distance=..2] if score @s virus_contagion_random matches 111..160 run tag @e[distance=..2,limit=3] add virus
+execute as @e[tag=virus] at @s if entity @e[distance=..3] if score @s virus_contagion_random matches 161..195 run tag @e[distance=..3,limit=4] add virus
+
+execute as @e[tag=virus] at @s store result score @s virus_effect_random run random value 1..1000
+execute as @e[tag=virus] at @s if score @s virus_effect_random matches 1..45 run particle item_slime ~ ~1 ~ 0.1 0.1 0.1 1 25 normal

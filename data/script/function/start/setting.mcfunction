@@ -1,0 +1,5 @@
+scoreboard objectives add virus_damage_random dummy
+scoreboard objectives add virus_contagion_random dummy
+scoreboard objectives add virus_effect_random dummy
+
+scoreboard objectives add plague_summon_random dummy
